@@ -1,4 +1,4 @@
-v<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -755,13 +755,13 @@ v<!DOCTYPE html>
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: stretch;  /* ← Para que ambas columnas tengan la misma altura */
+            align-items: stretch;
         }
 
         .how-it-works-left .section-title {
             text-align: left;
             font-size: 1.2rem;
-            color: #c9a96e;  /* ← Color arena */
+            color: #c9a96e;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -794,7 +794,7 @@ v<!DOCTYPE html>
             flex-shrink: 0;
             width: 40px;
             height: 40px;
-            background: #c9a96e;  /* ← Color arena */
+            background: #c9a96e;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -820,7 +820,6 @@ v<!DOCTYPE html>
             line-height: 1.5;
         }
 
-        /* Ajuste de la imagen para que ocupe todo el alto de la columna */
         .how-it-works-right {
             display: flex;
             align-items: stretch;
@@ -830,46 +829,61 @@ v<!DOCTYPE html>
         .how-it-works-right img {
             width: 100%;
             height: 100%;
-            object-fit: cover;  /* ← Recorta la imagen para llenar el espacio sin deformarla */
+            object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        @media (max-width: 992px) {
-            .how-it-works-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .how-it-works-left .section-title {
-                text-align: center;
-            }
-            .how-it-works-left .main-title {
-                text-align: center;
-            }
-            .how-it-works-left .description {
-                text-align: center;
-            }
-            .how-it-works-right {
-                height: auto;
-            }
-            .how-it-works-right img {
-                height: auto;
-                max-height: 400px;
-            }
+        /* --- SECCIÓN CTA (Let's Build Your Perfect Itinerary) --- */
+        .cta-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1400&q=80') center/cover no-repeat;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            overflow: hidden;
         }
 
-        @media (max-width: 768px) {
-            .how-it-works-left .main-title {
-                font-size: 2.2rem;
-            }
-            .how-it-works-left .step-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .shape-divider svg {
-                height: 40px;
-            }
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            background: #25d366;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
 
         /* --- RESPONSIVE --- */
@@ -890,6 +904,26 @@ v<!DOCTYPE html>
             }
             .grid-3-features {
                 grid-template-columns: 1fr 1fr;
+            }
+            .how-it-works-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .how-it-works-left .section-title {
+                text-align: center;
+            }
+            .how-it-works-left .main-title {
+                text-align: center;
+            }
+            .how-it-works-left .description {
+                text-align: center;
+            }
+            .how-it-works-right {
+                height: auto;
+            }
+            .how-it-works-right img {
+                height: auto;
+                max-height: 400px;
             }
         }
 
@@ -924,6 +958,27 @@ v<!DOCTYPE html>
             .why-choose-us .feature-card {
                 padding: 15px 0;
             }
+            .how-it-works-left .main-title {
+                font-size: 2.2rem;
+            }
+            .how-it-works-left .step-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .shape-divider svg {
+                height: 40px;
+            }
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+            .cta-content p {
+                font-size: 1rem;
+            }
+            .btn-cta {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -949,10 +1004,9 @@ v<!DOCTYPE html>
     </header>
 
     <!-- ⬇️⬇️⬇️ CONTENEDOR PADRE CON FONDO DE IMAGEN ⬇️⬇️⬇️ -->
-    <!-- Este contenedor abarca el Hero y Why Choose Us, con una sola imagen de fondo -->
     <div class="hero-wrapper">
 
-        <!-- HERO (dos columnas: texto + formulario) -->
+        <!-- HERO -->
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero-grid">
@@ -1001,13 +1055,11 @@ v<!DOCTYPE html>
             </div>
         </section>
 
-        <!-- WHY CHOOSE US (transparente, con íconos SVG de la referencia) -->
+        <!-- WHY CHOOSE US -->
         <section class="why-choose-us" id="why-choose-us">
             <div class="container">
                 <h2 class="section-title">Why Choose Us</h2>
                 <div class="grid-3-features">
-
-                    <!-- Tarjeta 1: icono de contacto (jki-contact-form-light) -->
                     <div class="feature-card">
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -1017,8 +1069,6 @@ v<!DOCTYPE html>
                         <h3>A 100% Custom Itinerary, Not a Cookie-Cutter Package</h3>
                         <p>You're not basic, and your party shouldn't be either. Tell us the bride's vibe, and we build a complete, A-to-Z itinerary—from airport pickup to recovery brunch. You just approve and show up.</p>
                     </div>
-
-                    <!-- Tarjeta 2: icono de documento (jki-document-light) -->
                     <div class="feature-card">
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -1028,8 +1078,6 @@ v<!DOCTYPE html>
                         <h3>True VIP &amp; Insider Access (Not Just a Reservation)</h3>
                         <p>Stop researching. We're on the ground in Tulum. We use our local connections to book the private yachts, exclusive villas, and VIP tables you can't find online. We handle the deposits, the logistics, and the "who-to-talk-to".</p>
                     </div>
-
-                    <!-- Tarjeta 3: icono de check (e-fas-check) -->
                     <div class="feature-card">
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -1039,32 +1087,25 @@ v<!DOCTYPE html>
                         <h3>One Simple Price &amp; 24/7 On-Site Support</h3>
                         <p>Stop chasing 10 friends for Venmo. We handle all payments in one all-inclusive price. No hidden fees. Plus, you get a 24/7 dedicated host via WhatsApp from the moment you land. If you need anything, we're there.</p>
                     </div>
-
                 </div>
             </div>
         </section>
-
     </div>
-    <!-- ⬆️⬆️⬆️ FIN DEL CONTENEDOR PADRE CON FONDO DE IMAGEN ⬆️⬆️⬆️ -->
+    <!-- ⬆️⬆️⬆️ FIN DEL CONTENEDOR PADRE ⬆️⬆️⬆️ -->
 
-    <!-- HOW IT WORKS (con shape dividers y dos columnas) -->
+    <!-- HOW IT WORKS -->
     <section class="how-it-works-section" id="about">
-        <!-- Shape divider SUPERIOR (curva) -->
         <div class="shape-divider shape-divider-top">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
                 <path class="shape-fill" d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"/>
             </svg>
         </div>
-
         <div class="container">
             <div class="how-it-works-grid">
-                <!-- Columna izquierda: título, subtítulo, descripción, pasos -->
                 <div class="how-it-works-left">
                     <h2 class="section-title">How it works</h2>
                     <div class="main-title">From "Group Chat Chaos" to "VIP in Tulum"</div>
                     <p class="description">You're the Maid of Honor, not a travel agent. We are your dedicated Tulum insiders, building a 100% custom, all-inclusive experience that everyone will be talking about for years.</p>
-
-                    <!-- Paso 1 -->
                     <div class="step-item">
                         <div class="step-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -1076,8 +1117,6 @@ v<!DOCTYPE html>
                             <p>Fill out our 2-minute form. Are you 'Zen & Beachy' or 'Wild & VIP'? We build the party around the bride.</p>
                         </div>
                     </div>
-
-                    <!-- Paso 2 -->
                     <div class="step-item">
                         <div class="step-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -1089,8 +1128,6 @@ v<!DOCTYPE html>
                             <p>We send you a complete, custom itinerary and an all-inclusive quote. No hidden fees. No stress. You approve everything.</p>
                         </div>
                     </div>
-
-                    <!-- Paso 3 -->
                     <div class="step-item">
                         <div class="step-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -1103,16 +1140,37 @@ v<!DOCTYPE html>
                         </div>
                     </div>
                 </div>
-
-                <!-- Columna derecha: imagen -->
                 <div class="how-it-works-right">
                     <img src="https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/imagen%201.JPG?raw=true" alt="Bachelorette party in Tulum">
-                    <!-- Puedes cambiar esta imagen por la que subiste a GitHub (Imagen 2.JPEG) -->
                 </div>
             </div>
         </div>
+        <div class="shape-divider shape-divider-bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path class="shape-fill" d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"/>
+            </svg>
+        </div>
+    </section>
 
-        <!-- Shape divider INFERIOR (curva) -->
+    <!-- CTA: LET'S BUILD YOUR PERFECT ITINERARY -->
+    <section class="cta-section" id="cta">
+        <div class="shape-divider shape-divider-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path class="shape-fill" d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's Build Your Perfect Itinerary</h2>
+                <p>This isn't a booking. It's a 100% free, no-obligation proposal. Let us show you what's possible.</p>
+                <a href="https://wa.me/529842177651" target="_blank" class="btn-cta">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" style="margin-right: 8px; fill: white;">
+                        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
         <div class="shape-divider shape-divider-bottom">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
                 <path class="shape-fill" d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"/>
@@ -1251,7 +1309,7 @@ v<!DOCTYPE html>
         </div>
     </section>
 
-    <!-- CONTACT (dos columnas) -->
+    <!-- CONTACT -->
     <section class="section" id="contact">
         <div class="container">
             <h2 class="section-title">Let's Start Planning!</h2>
@@ -1309,7 +1367,6 @@ v<!DOCTYPE html>
 
     <!-- JAVASCRIPT -->
     <script>
-        // FAQ acordeón
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {

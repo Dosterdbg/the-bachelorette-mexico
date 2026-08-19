@@ -892,31 +892,79 @@
     </div>
     <!-- ⬆️⬆️⬆️ FIN DEL CONTENEDOR PADRE CON FONDO DE IMAGEN ⬆️⬆️⬆️ -->
 
-    <!-- HOW IT WORKS -->
-    <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title">How it works</h2>
-            <p style="text-align: center; font-size: 1.6rem; font-weight: 700; color: #121212; margin-bottom: 15px;">From "Group Chat Chaos" to "VIP in Tulum"</p>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px; color: #555;">You're the Maid of Honor, not a travel agent. We are your dedicated Tulum insiders, building a 100% custom, all-inclusive experience that everyone will be talking about for years.</p>
-            <div class="grid-3">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Step 1: Tell Us Your Vibe</h3>
-                    <p>Fill out our 2-minute form. Are you 'Zen & Beachy' or 'Wild & VIP'? We build the party around the bride.</p>
+
+   <!-- HOW IT WORKS (con shape dividers y dos columnas) -->
+<section class="how-it-works-section" id="about">
+    <!-- Shape divider SUPERIOR (curva) -->
+    <div class="shape-divider shape-divider-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="shape-fill" d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"/>
+        </svg>
+    </div>
+
+    <div class="container">
+        <div class="how-it-works-grid">
+            <!-- Columna izquierda: título, subtítulo, descripción, pasos -->
+            <div class="how-it-works-left">
+                <h2 class="section-title">How it works</h2>
+                <div class="main-title">From "Group Chat Chaos" to "VIP in Tulum"</div>
+                <p class="description">You're the Maid of Honor, not a travel agent. We are your dedicated Tulum insiders, building a 100% custom, all-inclusive experience that everyone will be talking about for years.</p>
+
+                <!-- Paso 1 -->
+                <div class="step-item">
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm0 14H4V4h16v12zM6 6h12v2H6zm0 4h12v2H6zm0 4h8v2H6z"/>
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>Step 1: Tell Us Your Vibe</h3>
+                        <p>Fill out our 2-minute form. Are you 'Zen & Beachy' or 'Wild & VIP'? We build the party around the bride.</p>
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Get Your Custom Plan</h3>
-                    <p>We send you a complete, custom itinerary and an all-inclusive quote. No hidden fees. No stress. You approve everything.</p>
+
+                <!-- Paso 2 -->
+                <div class="step-item">
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 18H6V4h7v5h5v11zM8 12h8v2H8zm0 4h6v2H8zm0-8h4v2H8z"/>
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>Step 2: Get Your Custom Plan</h3>
+                        <p>We send you a complete, custom itinerary and an all-inclusive quote. No hidden fees. No stress. You approve everything.</p>
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Arrive & Celebrate</h3>
-                    <p>We meet you at the airport. Your villa is stocked, your reservations are set. Your only job is to celebrate.</p>
+
+                <!-- Paso 3 -->
+                <div class="step-item">
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>Step 3: Arrive & Celebrate</h3>
+                        <p>We meet you at the airport. Your villa is stocked, your reservations are set. Your only job is to celebrate.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Columna derecha: imagen -->
+            <div class="how-it-works-right">
+                <img src="https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?w=600&q=80" alt="Bachelorette party in Tulum">
+                <!-- Puedes cambiar la imagen por la que subiste a GitHub -->
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Shape divider INFERIOR (curva) -->
+    <div class="shape-divider shape-divider-bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="shape-fill" d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"/>
+        </svg>
+    </div>
+</section>
 
     <!-- UNFORGETTABLE EXPERIENCES (Servicios) -->
     <section class="section bg-soft" id="services">

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -52,7 +52,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
             text-decoration: none;
             letter-spacing: 1px;
         }
@@ -72,11 +72,11 @@
         }
 
         nav a:hover {
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
         }
 
         .nav-cta {
-            background: #334fb4;
+            background: #c9a96e;  /* ← Color arena */
             color: white !important;
             padding: 8px 20px;
             border-radius: 30px;
@@ -85,23 +85,20 @@
         }
 
         .nav-cta:hover {
-            background: #121212;
+            background: #a8874e;
             transform: scale(1.05);
         }
 
         /* --- CONTENEDOR PADRE CON FONDO DE IMAGEN (HERO + WHY CHOOSE US) --- */
         .hero-wrapper {
-            /* ⬇️⬇️⬇️ ESTA ES LA ÚNICA IMAGEN DE FONDO, CUBRE AMBAS SECCIONES ⬇️⬇️⬇️ */
-            background: linear-gradient(135deg, rgba(51, 79, 180, 0.3), rgba(0, 0, 0, 0.5)),
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.3), rgba(0, 0, 0, 0.5)),
                         url('https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/Imagen%202.JPEG?raw=true') center/cover no-repeat;
-            /* El fondo se extiende por todo el contenedor */
         }
 
         /* --- HERO (sin fondo propio) --- */
         .hero {
-            padding: 80px 0 0 0;  /* padding-bottom: 0 para que no haya espacio con la siguiente sección */
+            padding: 80px 0 0 0;
             color: white;
-            /* No tiene background propio, hereda el del wrapper */
         }
 
         .hero-grid {
@@ -135,7 +132,7 @@
 
         .hero-content .btn-primary {
             display: inline-block;
-            background: linear-gradient(135deg, #334fb4, #121212);
+            background: linear-gradient(135deg, #c9a96e, #a8874e);
             color: white;
             padding: 14px 40px;
             border-radius: 50px;
@@ -143,7 +140,7 @@
             font-weight: 700;
             font-size: 1rem;
             transition: all 0.3s;
-            box-shadow: 0 8px 30px rgba(51, 79, 180, 0.4);
+            box-shadow: 0 8px 30px rgba(201, 169, 110, 0.4);
             border: none;
             cursor: pointer;
             margin-top: 10px;
@@ -151,7 +148,7 @@
 
         .hero-content .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(51, 79, 180, 0.6);
+            box-shadow: 0 12px 40px rgba(201, 169, 110, 0.6);
         }
 
         /* FORMULARIO EN EL HERO */
@@ -192,8 +189,8 @@
         .hero-form select:focus,
         .hero-form textarea:focus {
             outline: none;
-            border-color: #334fb4;
-            box-shadow: 0 0 8px rgba(51, 79, 180, 0.3);
+            border-color: #c9a96e;
+            box-shadow: 0 0 8px rgba(201, 169, 110, 0.3);
         }
 
         .hero-form textarea {
@@ -225,7 +222,7 @@
 
         .hero-form .btn-submit {
             width: 100%;
-            background: linear-gradient(135deg, #334fb4, #121212);
+            background: linear-gradient(135deg, #c9a96e, #a8874e);
             color: white;
             padding: 14px;
             border: none;
@@ -234,17 +231,17 @@
             font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(51, 79, 180, 0.3);
+            box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
         }
 
         .hero-form .btn-submit:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(51, 79, 180, 0.5);
+            box-shadow: 0 12px 35px rgba(201, 169, 110, 0.5);
         }
 
         /* --- WHY CHOOSE US (transparente, con íconos SVG) --- */
         .why-choose-us {
-            padding: 0 0 80px 0;  /* padding-top: 0 para que la imagen sea continua */
+            padding: 0 0 80px 0;
             color: white;
         }
 
@@ -255,32 +252,31 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
-        /* Tarjetas de Why Choose Us (sin fondo, solo texto e íconos) */
         .why-choose-us .feature-card {
-            background: transparent;  /* Sin fondo */
-            backdrop-filter: none;    /* Sin blur */
+            background: transparent;
+            backdrop-filter: none;
             padding: 20px 0;
             text-align: left;
-            border-left: none;        /* Sin borde lateral */
+            border-left: none;
             box-shadow: none;
             transition: none;
         }
 
         .why-choose-us .feature-card:hover {
-            transform: none;          /* Sin efecto hover */
+            transform: none;
         }
 
         .why-choose-us .feature-card .icon {
             font-size: 2.5rem;
             margin-bottom: 10px;
             display: inline-block;
-            color: #ffd700;           /* Color dorado para los íconos SVG */
+            color: #ffd700;
         }
 
         .why-choose-us .feature-card .icon svg {
             width: 2.5rem;
             height: 2.5rem;
-            fill: #ffd700;            /* Color dorado para los SVG */
+            fill: #ffd700;
         }
 
         .why-choose-us .feature-card h3 {
@@ -314,7 +310,7 @@
             text-align: center;
             margin-bottom: 15px;
             font-weight: 700;
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
         }
 
         .section-subtitle {
@@ -345,7 +341,7 @@
             border-radius: 10px;
             text-align: center;
             transition: all 0.3s;
-            border-left: 4px solid #334fb4;
+            border-left: 4px solid #c9a96e;  /* ← Color arena */
         }
 
         .step-card:hover {
@@ -355,7 +351,7 @@
 
         .step-number {
             display: inline-block;
-            background: #334fb4;
+            background: #c9a96e;  /* ← Color arena */
             color: white;
             width: 50px;
             height: 50px;
@@ -369,7 +365,7 @@
         .step-card h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
         }
 
         .step-card p {
@@ -390,12 +386,12 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s;
-            border: 2px solid #334fb4;
+            border: 2px solid #c9a96e;  /* ← Color arena */
         }
 
         .package-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(51, 79, 180, 0.15);
+            box-shadow: 0 15px 30px rgba(201, 169, 110, 0.15);
         }
 
         .package-card .package-image {
@@ -410,7 +406,7 @@
 
         .package-card h3 {
             font-size: 1.6rem;
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
             margin-bottom: 5px;
         }
 
@@ -439,7 +435,7 @@
 
         .package-card .btn-small {
             display: inline-block;
-            background: #334fb4;
+            background: #c9a96e;  /* ← Color arena */
             color: white;
             padding: 10px 30px;
             border-radius: 40px;
@@ -452,7 +448,7 @@
         }
 
         .package-card .btn-small:hover {
-            background: #121212;
+            background: #a8874e;
             transform: scale(1.05);
         }
 
@@ -463,7 +459,7 @@
             background: white;
             padding: 40px;
             border-radius: 10px;
-            border-left: 4px solid #334fb4;
+            border-left: 4px solid #c9a96e;  /* ← Color arena */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
@@ -477,7 +473,7 @@
 
         .testimonial-box .author {
             font-weight: 700;
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
         }
 
         /* --- FAQ --- */
@@ -525,7 +521,7 @@
         .faq-icon {
             font-size: 1.3rem;
             transition: transform 0.3s;
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
         }
 
         .faq-item.active .faq-icon {
@@ -542,7 +538,7 @@
 
         .contact-info h3 {
             font-size: 1.5rem;
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
             margin-bottom: 10px;
         }
 
@@ -559,7 +555,7 @@
             background: #f9f9f9;
             padding: 40px 30px;
             border-radius: 10px;
-            border-left: 4px solid #334fb4;
+            border-left: 4px solid #c9a96e;  /* ← Color arena */
         }
 
         .contact-form-wrapper .form-group {
@@ -591,8 +587,8 @@
         .contact-form-wrapper select:focus,
         .contact-form-wrapper textarea:focus {
             outline: none;
-            border-color: #334fb4;
-            box-shadow: 0 0 8px rgba(51, 79, 180, 0.3);
+            border-color: #c9a96e;
+            box-shadow: 0 0 8px rgba(201, 169, 110, 0.3);
         }
 
         .contact-form-wrapper textarea {
@@ -617,13 +613,13 @@
         }
 
         .contact-form-wrapper .checkbox-group a {
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
             text-decoration: underline;
         }
 
         .contact-form-wrapper .btn-submit {
             width: 100%;
-            background: linear-gradient(135deg, #334fb4, #121212);
+            background: linear-gradient(135deg, #c9a96e, #a8874e);
             color: white;
             padding: 14px;
             border: none;
@@ -632,12 +628,12 @@
             font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(51, 79, 180, 0.3);
+            box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
         }
 
         .contact-form-wrapper .btn-submit:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(51, 79, 180, 0.5);
+            box-shadow: 0 12px 35px rgba(201, 169, 110, 0.5);
         }
 
         /* --- FOOTER --- */
@@ -658,7 +654,7 @@
         }
 
         .footer-grid h3 {
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
             margin-bottom: 15px;
             font-weight: 700;
         }
@@ -678,7 +674,7 @@
         }
 
         .footer-grid a:hover {
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
         }
 
         .footer-bottom {
@@ -690,7 +686,7 @@
         }
 
         .footer-bottom span {
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
         }
 
         /* --- WHATSAPP FLOTANTE --- */
@@ -744,7 +740,7 @@
         }
 
         .shape-divider .shape-fill {
-            fill: #ffffff;  /* Fondo blanco para la sección How it works */
+            fill: #ffffff;
         }
 
         /* --- SECCIÓN HOW IT WORKS (dos columnas) --- */
@@ -759,13 +755,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            align-items: stretch;  /* ← Para que ambas columnas tengan la misma altura */
         }
 
         .how-it-works-left .section-title {
             text-align: left;
             font-size: 1.2rem;
-            color: #334fb4;
+            color: #c9a96e;  /* ← Color arena */
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -798,7 +794,7 @@
             flex-shrink: 0;
             width: 40px;
             height: 40px;
-            background: #334fb4;
+            background: #c9a96e;  /* ← Color arena */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -824,8 +820,17 @@
             line-height: 1.5;
         }
 
+        /* Ajuste de la imagen para que ocupe todo el alto de la columna */
+        .how-it-works-right {
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+        }
+
         .how-it-works-right img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;  /* ← Recorta la imagen para llenar el espacio sin deformarla */
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
@@ -843,6 +848,13 @@
             }
             .how-it-works-left .description {
                 text-align: center;
+            }
+            .how-it-works-right {
+                height: auto;
+            }
+            .how-it-works-right img {
+                height: auto;
+                max-height: 400px;
             }
         }
 
@@ -1250,10 +1262,10 @@
                     <div class="detail"><strong>Office Address</strong><span>Tulum</span></div>
                     <div class="detail"><strong>Phone Number</strong><span>+52 984 217 7651</span></div>
                     <div class="detail"><strong>Email Address</strong><span>info@thebachelorettetulum.com</span></div>
-                    <p style="margin-top: 20px;"><a href="https://wa.me/529842177651" target="_blank" style="color: #334fb4; font-weight: 700;">Chat with us on WhatsApp →</a></p>
+                    <p style="margin-top: 20px;"><a href="https://wa.me/529842177651" target="_blank" style="color: #c9a96e; font-weight: 700;">Chat with us on WhatsApp →</a></p>
                 </div>
                 <div class="contact-form-wrapper">
-                    <h3 style="margin-bottom: 20px; color: #334fb4;">Get Your Free Itinerary &amp; Budget</h3>
+                    <h3 style="margin-bottom: 20px; color: #c9a96e;">Get Your Free Itinerary &amp; Budget</h3>
                     <form id="contactForm" onsubmit="handleContactFormSubmit(event)">
                         <div class="form-group">
                             <label for="contactName">First Name *</label>

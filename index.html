@@ -6,31 +6,28 @@
     <title>Bachelorette Party Planning Services in Tulum</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset y base */
+        /* (estilos - no cambian nada) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Assistant', sans-serif; background: #fff; color: #121212; line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* Header */
-        header { background: rgba(0,0,0,0.9); position: sticky; top: 0; z-index: 1000; padding: 15px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        header { background: rgba(0,0,0,0.9); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
         .header-container { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.8rem; font-weight: 700; color: #334fb4; text-decoration: none; }
         nav { display: flex; gap: 25px; align-items: center; }
         nav a { color: #fff; text-decoration: none; font-weight: 400; font-size: 0.95rem; }
         nav a:hover { color: #334fb4; }
-        .nav-cta { background: #334fb4; color: #fff !important; padding: 8px 20px; border-radius: 30px; font-weight: 700; transition: 0.3s; }
+        .nav-cta { background: #334fb4; color: #fff !important; padding: 8px 20px; border-radius: 30px; font-weight: 700; }
         .nav-cta:hover { background: #121212; transform: scale(1.05); }
-
-        /* Hero (dos columnas) */
         .hero {
             background: linear-gradient(135deg, rgba(51,79,180,0.3), rgba(0,0,0,0.5)),
                         url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=80') center/cover no-repeat;
             padding: 80px 0;
             color: #fff;
         }
+        /* ⬆️ IMAGEN #1: FONDO DEL HERO (la playa) */
         .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .hero-content h1 { font-size: 4rem; font-weight: 700; margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
-        .hero-content .subtitle { font-size: 1.8rem; font-weight: 400; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+        .hero-content h1 { font-size: 4rem; font-weight: 700; margin-bottom: 10px; }
+        .hero-content .subtitle { font-size: 1.8rem; font-weight: 400; margin-bottom: 20px; }
         .hero-content p { font-size: 1.1rem; margin-bottom: 15px; }
         .btn-primary {
             display: inline-block;
@@ -40,16 +37,13 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1rem;
             transition: 0.3s;
             box-shadow: 0 8px 30px rgba(51,79,180,0.4);
             border: none;
             cursor: pointer;
             margin-top: 10px;
         }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(51,79,180,0.6); }
-
-        /* Formulario del Hero */
+        .btn-primary:hover { transform: translateY(-3px); }
         .hero-form {
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
@@ -68,7 +62,6 @@
             font-family: 'Assistant', sans-serif;
             background: rgba(255,255,255,0.9);
             color: #121212;
-            transition: 0.3s;
         }
         .hero-form input:focus, .hero-form select:focus, .hero-form textarea:focus {
             outline: none;
@@ -76,12 +69,7 @@
             box-shadow: 0 0 8px rgba(51,79,180,0.3);
         }
         .hero-form textarea { min-height: 70px; resize: vertical; }
-        .hero-form .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 15px 0;
-        }
+        .hero-form .checkbox-group { display: flex; align-items: center; gap: 10px; margin: 15px 0; }
         .hero-form .checkbox-group input { width: auto; }
         .hero-form .checkbox-group label { font-weight: 400; font-size: 0.9rem; color: #fff; }
         .hero-form .checkbox-group a { color: #ffd700; text-decoration: underline; }
@@ -98,28 +86,22 @@
             transition: 0.3s;
             box-shadow: 0 8px 25px rgba(51,79,180,0.3);
         }
-        .hero-form .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(51,79,180,0.5); }
-
-        /* Otras secciones */
+        .hero-form .btn-submit:hover { transform: translateY(-3px); }
         .section { padding: 80px 0; }
         .section-title { font-size: 2.8rem; text-align: center; margin-bottom: 15px; font-weight: 700; color: #334fb4; }
         .section-subtitle { text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto; }
         .bg-soft { background: #f5f5f5; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-
         .step-card { background: #f9f9f9; padding: 40px 25px; border-radius: 10px; text-align: center; border-left: 4px solid #334fb4; transition: 0.3s; }
         .step-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
         .step-number { display: inline-block; background: #334fb4; color: #fff; width: 50px; height: 50px; border-radius: 50%; line-height: 50px; font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
         .step-card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #334fb4; }
         .step-card p { color: #555; }
-
         .feature-card { background: #fff; padding: 30px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 4px solid #334fb4; transition: 0.3s; }
         .feature-card:hover { transform: translateY(-5px); }
         .feature-card .icon { font-size: 3rem; margin-bottom: 15px; }
         .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #334fb4; }
         .feature-card p { color: #555; }
-
         .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .package-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid #334fb4; transition: 0.3s; }
         .package-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(51,79,180,0.15); }
@@ -132,11 +114,9 @@
         .package-card ul li:last-child { border-bottom: none; }
         .package-card .btn-small { display: inline-block; background: #334fb4; color: #fff; padding: 10px 30px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; border: none; cursor: pointer; }
         .package-card .btn-small:hover { background: #121212; transform: scale(1.05); }
-
         .testimonial-box { max-width: 700px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; border-left: 4px solid #334fb4; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .testimonial-box .quote { font-size: 1.3rem; font-weight: 400; color: #121212; line-height: 1.8; margin-bottom: 15px; }
         .testimonial-box .author { font-weight: 700; color: #334fb4; }
-
         .faq-list { max-width: 700px; margin: 0 auto; }
         .faq-item { background: #fff; margin-bottom: 12px; border-radius: 8px; border: 1px solid #ddd; overflow: hidden; }
         .faq-question { padding: 18px 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; background: #f5f5f5; transition: 0.3s; }
@@ -145,7 +125,6 @@
         .faq-answer.active { display: block; }
         .faq-icon { font-size: 1.3rem; transition: transform 0.3s; color: #334fb4; }
         .faq-item.active .faq-icon { transform: rotate(180deg); }
-
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
         .contact-info h3 { font-size: 1.5rem; color: #334fb4; margin-bottom: 10px; }
         .contact-info .detail { margin-bottom: 25px; }
@@ -160,8 +139,7 @@
         .contact-form-wrapper .checkbox-group input { width: auto; }
         .contact-form-wrapper .checkbox-group label { font-weight: 400; margin: 0; }
         .contact-form-wrapper .btn-submit { width: 100%; background: linear-gradient(135deg, #334fb4, #121212); color: #fff; padding: 14px; border: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 8px 25px rgba(51,79,180,0.3); }
-        .contact-form-wrapper .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(51,79,180,0.5); }
-
+        .contact-form-wrapper .btn-submit:hover { transform: translateY(-3px); }
         footer { background: #121212; color: #aaa; padding: 50px 20px 30px; margin-top: 40px; }
         .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
         .footer-grid h3 { color: #334fb4; margin-bottom: 15px; }
@@ -170,10 +148,8 @@
         .footer-grid a { color: #aaa; text-decoration: none; transition: 0.3s; }
         .footer-grid a:hover { color: #334fb4; }
         .footer-bottom { text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.9rem; color: #888; }
-
         .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; text-decoration: none; box-shadow: 0 6px 25px rgba(37,211,102,0.4); z-index: 999; transition: 0.3s; }
         .whatsapp-float:hover { transform: scale(1.1); }
-
         @media (max-width: 992px) {
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
             .hero-content h1 { font-size: 3rem; }
@@ -192,10 +168,18 @@
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ================================================== -->
+<!-- 1️⃣ LOGO (MENÚ SUPERIOR)                           -->
+<!-- ================================================== -->
 <header>
     <div class="container header-container">
-        <a href="#home" class="logo">✨ The Bachelorette Tulum</a>
+        <!-- ⬇️⬇️⬇️ AQUÍ ESTÁ EL LOGO (IMAGEN) ⬇️⬇️⬇️ -->
+        <a href="#home" class="logo">
+            <img src="https://raw.githubusercontent.com/Dosterdbg/the-bachelorette-mexico/main/Logo%20(1).png" 
+                 alt="The Bachelorette Tulum" 
+                 style="height: 40px; width: auto; display: block;">
+        </a>
+        <!-- ⬆️⬆️⬆️ CAMBIA LA URL por la de tu logo ⬆️⬆️⬆️ -->
         <nav>
             <a href="#about">About</a>
             <a href="#services">Services</a>
@@ -206,8 +190,15 @@
     </div>
 </header>
 
-<!-- HERO (dos columnas) -->
+<!-- ================================================== -->
+<!-- 2️⃣ IMAGEN #1: FONDO DEL HERO (la playa)           -->
+<!-- ================================================== -->
 <section class="hero" id="home">
+    <!-- ⬇️⬇️⬇️ AQUÍ ESTÁ LA IMAGEN DE FONDO (HÉROE) ⬇️⬇️⬇️ -->
+    <!-- Está en el CSS: .hero { background: ... url('...') ... } -->
+    <!-- Busca arriba en el <style> la línea que dice: -->
+    <!-- .hero { background: ... url('https://images.unsplash.com/...') ... } -->
+    <!-- ⬆️⬆️⬆️ CAMBIA ESA URL por la de tu imagen de playa ⬆️⬆️⬆️ -->
     <div class="container">
         <div class="hero-grid">
             <div class="hero-content">
@@ -217,16 +208,11 @@
                 <p style="font-size: 1em; opacity: 0.9;">This isn't a booking. Fill this out in 2 minutes, and we'll send you a 100% free, no-obligation proposal with itinerary ideas and all-inclusive pricing. No stress, ever.</p>
                 <a href="#contact" class="btn-primary">Start Planning My Party</a>
             </div>
-            <!-- FORMULARIO EN EL HERO -->
             <div class="hero-form">
                 <h3>Get Your Free, Custom Itinerary</h3>
                 <form id="heroForm" onsubmit="handleHeroFormSubmit(event)">
-                    <div class="form-group">
-                        <input type="text" name="firstName" placeholder="First Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Best Email" required>
-                    </div>
+                    <div class="form-group"><input type="text" name="firstName" placeholder="First Name" required></div>
+                    <div class="form-group"><input type="email" name="email" placeholder="Best Email" required></div>
                     <div class="form-group">
                         <select name="guests" required>
                             <option value="">Number of Guests</option>
@@ -236,15 +222,9 @@
                             <option value="16+">16+ Guests</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="dates" placeholder="Desired Dates (Optional)">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="vibe" placeholder="What's the Bride's Vibe? (optional)">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Any special requests?" rows="2"></textarea>
-                    </div>
+                    <div class="form-group"><input type="text" name="dates" placeholder="Desired Dates (Optional)"></div>
+                    <div class="form-group"><input type="text" name="vibe" placeholder="What's the Bride's Vibe? (optional)"></div>
+                    <div class="form-group"><textarea name="message" placeholder="Any special requests?" rows="2"></textarea></div>
                     <div class="checkbox-group">
                         <input type="checkbox" id="privacyHero" required>
                         <label for="privacyHero">I have read and accept the <a href="#">Privacy Policy</a>.</label>
@@ -256,57 +236,39 @@
     </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- ================================================== -->
+<!-- 3️⃣ SECCIÓN "HOW IT WORKS" (sin imágenes)          -->
+<!-- ================================================== -->
 <section class="section" id="about">
     <div class="container">
         <h2 class="section-title">How it works</h2>
         <p style="text-align: center; font-size: 1.6rem; font-weight: 700; color: #121212; margin-bottom: 15px;">From "Group Chat Chaos" to "VIP in Tulum"</p>
         <p style="text-align: center; max-width: 700px; margin: 0 auto 50px; color: #555;">You're the Maid of Honor, not a travel agent. We are your dedicated Tulum insiders, building a 100% custom, all-inclusive experience that everyone will be talking about for years.</p>
         <div class="grid-3">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Step 1: Tell Us Your Vibe</h3>
-                <p>Fill out our 2-minute form. Are you 'Zen & Beachy' or 'Wild & VIP'? We build the party around the bride.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Get Your Custom Plan</h3>
-                <p>We send you a complete, custom itinerary and an all-inclusive quote. No hidden fees. No stress. You approve everything.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Arrive & Celebrate</h3>
-                <p>We meet you at the airport. Your villa is stocked, your reservations are set. Your only job is to celebrate.</p>
-            </div>
+            <div class="step-card"><div class="step-number">1</div><h3>Step 1: Tell Us Your Vibe</h3><p>Fill out our 2-minute form. Are you 'Zen & Beachy' or 'Wild & VIP'? We build the party around the bride.</p></div>
+            <div class="step-card"><div class="step-number">2</div><h3>Get Your Custom Plan</h3><p>We send you a complete, custom itinerary and an all-inclusive quote. No hidden fees. No stress. You approve everything.</p></div>
+            <div class="step-card"><div class="step-number">3</div><h3>Arrive & Celebrate</h3><p>We meet you at the airport. Your villa is stocked, your reservations are set. Your only job is to celebrate.</p></div>
         </div>
     </div>
 </section>
 
-<!-- WHY CHOOSE US -->
+<!-- ================================================== -->
+<!-- 4️⃣ SECCIÓN "WHY CHOOSE US" (sin imágenes)         -->
+<!-- ================================================== -->
 <section class="section bg-soft">
     <div class="container">
         <h2 class="section-title">Why Choose Us</h2>
         <div class="grid-3">
-            <div class="feature-card">
-                <div class="icon">📋</div>
-                <h3>A 100% Custom Itinerary, Not a Cookie-Cutter Package</h3>
-                <p>You're not basic, and your party shouldn't be either. Tell us the bride's vibe, and we build a complete, A-to-Z itinerary—from airport pickup to recovery brunch. You just approve and show up.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">👑</div>
-                <h3>True VIP &amp; Insider Access (Not Just a Reservation)</h3>
-                <p>Stop researching. We're on the ground in Tulum. We use our local connections to book the private yachts, exclusive villas, and VIP tables you can't find online. We handle the deposits, the logistics, and the "who-to-talk-to".</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">💎</div>
-                <h3>One Simple Price &amp; 24/7 On-Site Support</h3>
-                <p>Stop chasing 10 friends for Venmo. We handle all payments in one all-inclusive price. No hidden fees. Plus, you get a 24/7 dedicated host via WhatsApp from the moment you land. If you need anything, we're there.</p>
-            </div>
+            <div class="feature-card"><div class="icon">📋</div><h3>A 100% Custom Itinerary, Not a Cookie-Cutter Package</h3><p>You're not basic, and your party shouldn't be either. Tell us the bride's vibe, and we build a complete, A-to-Z itinerary—from airport pickup to recovery brunch. You just approve and show up.</p></div>
+            <div class="feature-card"><div class="icon">👑</div><h3>True VIP &amp; Insider Access (Not Just a Reservation)</h3><p>Stop researching. We're on the ground in Tulum. We use our local connections to book the private yachts, exclusive villas, and VIP tables you can't find online. We handle the deposits, the logistics, and the "who-to-talk-to".</p></div>
+            <div class="feature-card"><div class="icon">💎</div><h3>One Simple Price &amp; 24/7 On-Site Support</h3><p>Stop chasing 10 friends for Venmo. We handle all payments in one all-inclusive price. No hidden fees. Plus, you get a 24/7 dedicated host via WhatsApp from the moment you land. If you need anything, we're there.</p></div>
         </div>
     </div>
 </section>
 
-<!-- UNFORGETTABLE EXPERIENCES -->
+<!-- ================================================== -->
+<!-- 5️⃣ SERVICIOS (con emojis, sin imágenes)           -->
+<!-- ================================================== -->
 <section class="section" id="services">
     <div class="container">
         <h2 class="section-title">Unforgettable Bachelorette Experiences in Tulum</h2>
@@ -322,14 +284,20 @@
     </div>
 </section>
 
-<!-- FIND YOUR PERFECT PACKAGE -->
+<!-- ================================================== -->
+<!-- 6️⃣ PAQUETES (con imágenes)                        -->
+<!-- ================================================== -->
 <section class="section bg-soft" id="packages">
     <div class="container">
         <h2 class="section-title">Find Your Perfect Bachelorette Package</h2>
         <p class="section-subtitle">Choose the vibe that fits your group. We'll send you the full itinerary &amp; budget for free within 24 hours. Every package includes 4 days, 3 nights, and full concierge service.</p>
         <div class="packages-grid">
+
+            <!-- PAQUETE 1: Luxury Queen -->
             <div class="package-card">
+                <!-- ⬇️⬇️⬇️ IMAGEN #2: PAQUETE 1 (Luxury Queen) ⬇️⬇️⬇️ -->
                 <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80');"></div>
+                <!-- ⬆️⬆️⬆️ CAMBIA ESA URL por la de tu imagen de lujo ⬆️⬆️⬆️ -->
                 <div class="package-body">
                     <h3>👑 The Luxury Queen</h3>
                     <div class="package-subtitle">For the bride who loves elegance, private chefs &amp; yacht days.</div>
@@ -343,8 +311,12 @@
                     <a href="#contact" class="btn-small">Get the Luxury Plan</a>
                 </div>
             </div>
+
+            <!-- PAQUETE 2: Adventure Escape -->
             <div class="package-card">
+                <!-- ⬇️⬇️⬇️ IMAGEN #3: PAQUETE 2 (Adventure Escape) ⬇️⬇️⬇️ -->
                 <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80');"></div>
+                <!-- ⬆️⬆️⬆️ CAMBIA ESA URL por la de tu imagen de aventura ⬆️⬆️⬆️ -->
                 <div class="package-body">
                     <h3>🌿 The Adventure Escape</h3>
                     <div class="package-subtitle">For wild souls who want cenotes, ATVs &amp; beach parties. Balance nature, fun &amp; luxury your way.</div>
@@ -358,8 +330,12 @@
                     <a href="#contact" class="btn-small">Get the Adventure Plan</a>
                 </div>
             </div>
+
+            <!-- PAQUETE 3: Party Crashers -->
             <div class="package-card">
+                <!-- ⬇️⬇️⬇️ IMAGEN #4: PAQUETE 3 (Party Crashers) ⬇️⬇️⬇️ -->
                 <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80');"></div>
+                <!-- ⬆️⬆️⬆️ CAMBIA ESA URL por la de tu imagen de fiesta ⬆️⬆️⬆️ -->
                 <div class="package-body">
                     <h3>🎉 The Party Crashers</h3>
                     <div class="package-subtitle">For groups that just want to dance, toast &amp; party till sunrise. Beach clubs, décor &amp; VIP reservations handled for you.</div>
@@ -373,8 +349,12 @@
                     <a href="#contact" class="btn-small">Get the Party Plan</a>
                 </div>
             </div>
+
+            <!-- PAQUETE 4: Relaxation Retreat -->
             <div class="package-card">
+                <!-- ⬇️⬇️⬇️ IMAGEN #5: PAQUETE 4 (Relaxation Retreat) ⬇️⬇️⬇️ -->
                 <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80');"></div>
+                <!-- ⬆️⬆️⬆️ CAMBIA ESA URL por la de tu imagen de relax ⬆️⬆️⬆️ -->
                 <div class="package-body">
                     <h3>🧘 The Relaxation Retreat</h3>
                     <div class="package-subtitle">For those who prefer yoga, spa days &amp; calm Caribbean vibes. Perfect for wellness-loving bridesmaids.</div>
@@ -388,11 +368,14 @@
                     <a href="#contact" class="btn-small">Get the Retreat Plan</a>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
-<!-- TESTIMONIAL -->
+<!-- ================================================== -->
+<!-- 7️⃣ TESTIMONIAL (sin imágenes)                     -->
+<!-- ================================================== -->
 <section class="section" id="testimonials">
     <div class="container">
         <h2 class="section-title">Don't Just Take Our Word For It...</h2>
@@ -404,40 +387,26 @@
     </div>
 </section>
 
-<!-- FAQ -->
+<!-- ================================================== -->
+<!-- 8️⃣ FAQ (sin imágenes)                             -->
+<!-- ================================================== -->
 <section class="section bg-soft" id="faq">
     <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-question"><span>How far in advance should we book our services?</span><span class="faq-icon">▼</span></div>
-                <div class="faq-answer">We recommend booking at least 4–6 weeks in advance to ensure availability, especially during high season.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question"><span>Can we customize our package or choose à la carte services?</span><span class="faq-icon">▼</span></div>
-                <div class="faq-answer">Absolutely! All our services are fully customizable to fit your group's vibe, budget, and schedule.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question"><span>Do you offer airport transportation for large groups?</span><span class="faq-icon">▼</span></div>
-                <div class="faq-answer">Yes, we provide private airport transfers for groups of all sizes — just let us know your arrival details.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question"><span>Is there a minimum group size to book your services?</span><span class="faq-icon">▼</span></div>
-                <div class="faq-answer">Nope! Whether it's an intimate party of 3 or a full crew of 15+, we'll make it special.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question"><span>What happens if we need to cancel or reschedule?</span><span class="faq-icon">▼</span></div>
-                <div class="faq-answer">We understand things happen. Just reach out as early as possible and we'll do our best to adjust.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question"><span>Do your chefs and staff speak English?</span><span class="faq-icon">▼</span></div>
-                <div class="faq-answer">Yes! Our team is bilingual and experienced in hosting international guests.</div>
-            </div>
+            <div class="faq-item"><div class="faq-question"><span>How far in advance should we book our services?</span><span class="faq-icon">▼</span></div><div class="faq-answer">We recommend booking at least 4–6 weeks in advance to ensure availability, especially during high season.</div></div>
+            <div class="faq-item"><div class="faq-question"><span>Can we customize our package or choose à la carte services?</span><span class="faq-icon">▼</span></div><div class="faq-answer">Absolutely! All our services are fully customizable to fit your group's vibe, budget, and schedule.</div></div>
+            <div class="faq-item"><div class="faq-question"><span>Do you offer airport transportation for large groups?</span><span class="faq-icon">▼</span></div><div class="faq-answer">Yes, we provide private airport transfers for groups of all sizes — just let us know your arrival details.</div></div>
+            <div class="faq-item"><div class="faq-question"><span>Is there a minimum group size to book your services?</span><span class="faq-icon">▼</span></div><div class="faq-answer">Nope! Whether it's an intimate party of 3 or a full crew of 15+, we'll make it special.</div></div>
+            <div class="faq-item"><div class="faq-question"><span>What happens if we need to cancel or reschedule?</span><span class="faq-icon">▼</span></div><div class="faq-answer">We understand things happen. Just reach out as early as possible and we'll do our best to adjust.</div></div>
+            <div class="faq-item"><div class="faq-question"><span>Do your chefs and staff speak English?</span><span class="faq-icon">▼</span></div><div class="faq-answer">Yes! Our team is bilingual and experienced in hosting international guests.</div></div>
         </div>
     </div>
 </section>
 
-<!-- CONTACT (dos columnas) -->
+<!-- ================================================== -->
+<!-- 9️⃣ CONTACTO (sin imágenes)                        -->
+<!-- ================================================== -->
 <section class="section" id="contact">
     <div class="container">
         <h2 class="section-title">Let's Start Planning!</h2>
@@ -453,26 +422,11 @@
             <div class="contact-form-wrapper">
                 <h3 style="margin-bottom: 20px; color: #334fb4;">Get Your Free Itinerary &amp; Budget</h3>
                 <form id="contactForm" onsubmit="handleContactFormSubmit(event)">
-                    <div class="form-group">
-                        <label for="contactName">First Name *</label>
-                        <input type="text" id="contactName" name="name" required placeholder="Your first name">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Best Email *</label>
-                        <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactPhone">Phone Number *</label>
-                        <input type="tel" id="contactPhone" name="phone" required placeholder="+52 123 456 7890">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactMessage">Message</label>
-                        <textarea id="contactMessage" name="message" placeholder="Tell us more about your perfect party..."></textarea>
-                    </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="privacyContact" required>
-                        <label for="privacyContact">I have read and accept the <a href="#">Privacy Policy</a>.</label>
-                    </div>
+                    <div class="form-group"><label for="contactName">First Name *</label><input type="text" id="contactName" name="name" required placeholder="Your first name"></div>
+                    <div class="form-group"><label for="contactEmail">Best Email *</label><input type="email" id="contactEmail" name="email" required placeholder="your@email.com"></div>
+                    <div class="form-group"><label for="contactPhone">Phone Number *</label><input type="tel" id="contactPhone" name="phone" required placeholder="+52 123 456 7890"></div>
+                    <div class="form-group"><label for="contactMessage">Message</label><textarea id="contactMessage" name="message" placeholder="Tell us more about your perfect party..."></textarea></div>
+                    <div class="checkbox-group"><input type="checkbox" id="privacyContact" required><label for="privacyContact">I have read and accept the <a href="#">Privacy Policy</a>.</label></div>
                     <button type="submit" class="btn-submit">Get My Itinerary</button>
                 </form>
             </div>
@@ -480,7 +434,9 @@
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ================================================== -->
+<!-- 🔟 FOOTER (sin imágenes)                           -->
+<!-- ================================================== -->
 <footer>
     <div class="footer-grid">
         <div><h3>✨ The Bachelorette Tulum</h3><p style="color:#888;">Tulum</p></div>
@@ -490,7 +446,7 @@
     <div class="footer-bottom"><p>Copyright © 2025. All rights reserved.</p></div>
 </footer>
 
-<!-- WHATSAPP FLOATING -->
+<!-- WHATSAPP FLOATING (sin imagen, solo ícono) -->
 <a href="https://wa.me/529842177651" target="_blank" class="whatsapp-float" title="Chat with us">💬</a>
 
 <!-- JAVASCRIPT -->

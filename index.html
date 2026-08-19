@@ -874,7 +874,7 @@
         .btn-cta {
             display: inline-flex;
             align-items: center;
-            background: linear-gradient(135deg, #c9a96e, #a8874e);  /* Mismo color arena */
+            background: linear-gradient(135deg, #c9a96e, #a8874e);
             color: white;
             padding: 14px 35px;
             border-radius: 50px;
@@ -962,4 +962,125 @@
                 gap: 30px;
             }
             .why-choose-us .feature-card {
-                padding: 15px 
+                padding: 15px 0;
+            }
+            .how-it-works-left .main-title {
+                font-size: 2.2rem;
+            }
+            .how-it-works-left .step-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .shape-divider svg {
+                height: 40px;
+            }
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+            .cta-content p {
+                font-size: 1rem;
+            }
+            .btn-cta {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <!-- ⬇️⬇️⬇️ LOGO (imagen que subiste a GitHub) ⬇️⬇️⬇️ -->
+                <img src="https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/Logo%20(1).png?raw=true" 
+                     alt="The Bachelorette Tulum" 
+                     style="height: 40px; width: auto; display: block;">
+            </a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#packages">Packages</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" class="nav-cta">📲 More Information</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ⬇️⬇️⬇️ CONTENEDOR PADRE CON FONDO DE IMAGEN ⬇️⬇️⬇️ -->
+    <div class="hero-wrapper">
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>Feel The Experience</h1>
+                        <div class="subtitle">Your Dream Tulum Bachelorette. Zero Planning Stress.</div>
+                        <p>Stop coordinating 10 spreadsheets. We handle the luxury villa, private yacht, VIP tables, and private chef. You just pack the glitter.</p>
+                        <p style="font-size: 1em; opacity: 0.9;">This isn't a booking. Fill this out in 2 minutes, and we'll send you a 100% free, no-obligation proposal with itinerary ideas and all-inclusive pricing. No stress, ever.</p>
+                        <a href="#contact" class="btn-primary">Start Planning My Party</a>
+                    </div>
+                    <div class="hero-form">
+                        <h3>Get Your Free, Custom Itinerary</h3>
+                        <form id="heroForm" onsubmit="handleHeroFormSubmit(event)">
+                            <div class="form-group">
+                                <input type="text" name="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Best Email" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="guests" required>
+                                    <option value="">Number of Guests</option>
+                                    <option value="4-6">4-6 Guests</option>
+                                    <option value="7-10">7-10 Guests</option>
+                                    <option value="11-15">11-15 Guests</option>
+                                    <option value="16+">16+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="dates" placeholder="Desired Dates (Optional)">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="vibe" placeholder="What's the Bride's Vibe? (optional)">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Any special requests?" rows="2"></textarea>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="privacyHero" required>
+                                <label for="privacyHero">I have read and accept the <a href="#">Privacy Policy</a>.</label>
+                            </div>
+                            <button type="submit" class="btn-submit">Get My Custom Proposal</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="why-choose-us" id="why-choose-us">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us</h2>
+                <div class="grid-3-features">
+                    <div class="feature-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm0 14H4V4h16v12zM6 6h12v2H6zm0 4h12v2H6zm0 4h8v2H6z"/>
+                            </svg>
+                        </div>
+                        <h3>A 100% Custom Itinerary, Not a Cookie-Cutter Package</h3>
+                        <p>You're not basic, and your party shouldn't be either. Tell us the bride's vibe, and we build a complete, A-to-Z itinerary—from airport pickup to recovery brunch. You just approve and show up.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 18H6V4h7v5h5v11zM8 12h8v2H8zm0 4h6v2H8zm0-8h4v2H8z"/>
+                            </svg>
+                        </div>
+                        <h3>True VIP &amp; Insider Access (Not Just a Reservation)</h3>
+                        <p>Stop researching. We're on the ground in Tulum. We use our local connections to book the private yachts, exclusive villas, and VIP tables you can't find online. We handle the deposits, the logistics, and the "who-to-talk-to".</p>
+                   

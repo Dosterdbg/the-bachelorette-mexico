@@ -2882,73 +2882,58 @@
         </div>
     </section>
     
-            <!-- FIND YOUR PERFECT PACKAGE -->
+               <!-- FIND YOUR PERFECT PACKAGE -->
     <section class="section" id="packages">
         <div class="container">
             <h2 class="section-title">Find Your Perfect Bachelorette Package</h2>
             <p class="section-subtitle">Choose the vibe that fits your group. We'll send you the full itinerary &amp; budget for free within 24 hours. Every package includes 4 days, 3 nights, and full concierge service.</p>
-            <div class="packages-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            <div class="packages-gallery" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px;">
                 
                 <!-- Paquete 1: Adventure Escape -->
-                <div class="package-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s; border: 2px solid #c9a96e; min-height: 400px; display: flex; align-items: flex-end; position: relative;">
+                <div class="package-gallery-item" style="position: relative; overflow: hidden; border-radius: 10px; min-height: 400px; cursor: pointer; transition: all 0.3s; border: 2px solid #c9a96e;">
                     <!-- ⬇️⬇️⬇️ IMAGEN 1: ADVENTURE ESCAPE ⬇️⬇️⬇️ -->
-                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
-                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80" alt="Adventure Escape" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80" alt="Adventure Escape" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                    <!-- Overlay oscuro -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%); pointer-events: none;"></div>
+                    <!-- Contenido superpuesto -->
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 25px; color: white; text-align: left;">
+                        <div style="margin-bottom: 5px; font-size: 0.85rem; color: #ffd700; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">🌿 The Adventure Escape</div>
+                        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">For wild souls who want cenotes, ATVs &amp; beach parties.</h3>
+                        <a href="#contact" style="display: inline-block; background: #c9a96e; color: white; padding: 8px 25px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin-top: 10px; border: none; cursor: pointer;">Get the Adventure Plan</a>
                     </div>
-                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.1) 100%); z-index: 1;"></div>
-                    <div style="padding: 30px 25px 25px; position: relative; z-index: 2; color: white; width: 100%;">
-                        <h3 style="color: #ffffff; font-size: 1.6rem; margin-bottom: 5px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">🌿 The Adventure Escape</h3>
-                        <div class="package-subtitle" style="color: #ffd700; font-weight: 400; margin-bottom: 15px; font-size: 0.95rem; text-shadow: 0 2px 6px rgba(0,0,0,0.5);">For wild souls who want cenotes, ATVs &amp; beach parties. Balance nature, fun &amp; luxury your way.</div>
-                        <ul style="list-style: none; margin: 10px 0; padding: 0;">
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Beachfront Villa</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ ATV Tour Adventure</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Cenote Swimming</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Beach Bonfire</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Guide Included</li>
-                        </ul>
-                        <a href="#contact" class="btn-small" style="display: inline-block; background: #c9a96e; color: white; padding: 10px 30px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; border: none; cursor: pointer; margin-top: 10px;">Get the Adventure Plan</a>
-                    </div>
+                    <!-- Efecto hover: zoom -->
+                    <style>
+                        .package-gallery-item:hover img {
+                            transform: scale(1.05);
+                        }
+                        .package-gallery-item:hover {
+                            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.3);
+                            transform: translateY(-5px);
+                        }
+                    </style>
                 </div>
 
                 <!-- Paquete 2: Party Crashers -->
-                <div class="package-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s; border: 2px solid #c9a96e; min-height: 400px; display: flex; align-items: flex-end; position: relative;">
+                <div class="package-gallery-item" style="position: relative; overflow: hidden; border-radius: 10px; min-height: 400px; cursor: pointer; transition: all 0.3s; border: 2px solid #c9a96e;">
                     <!-- ⬇️⬇️⬇️ IMAGEN 2: PARTY CRASHERS ⬇️⬇️⬇️ -->
-                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80" alt="Party Crashers" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    </div>
-                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.1) 100%); z-index: 1;"></div>
-                    <div style="padding: 30px 25px 25px; position: relative; z-index: 2; color: white; width: 100%;">
-                        <h3 style="color: #ffffff; font-size: 1.6rem; margin-bottom: 5px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">🎉 The Party Crashers</h3>
-                        <div class="package-subtitle" style="color: #ffd700; font-weight: 400; margin-bottom: 15px; font-size: 0.95rem; text-shadow: 0 2px 6px rgba(0,0,0,0.5);">For groups that just want to dance, toast &amp; party till sunrise. Beach clubs, décor &amp; VIP reservations handled for you.</div>
-                        <ul style="list-style: none; margin: 10px 0; padding: 0;">
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Central Location Villa</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ VIP Beach Club Tables</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Custom Decor &amp; Props</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Pre-party Drinks</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Party Coordinator</li>
-                        </ul>
-                        <a href="#contact" class="btn-small" style="display: inline-block; background: #c9a96e; color: white; padding: 10px 30px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; border: none; cursor: pointer; margin-top: 10px;">Get the Party Plan</a>
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80" alt="Party Crashers" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%); pointer-events: none;"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 25px; color: white; text-align: left;">
+                        <div style="margin-bottom: 5px; font-size: 0.85rem; color: #ffd700; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">🎉 The Party Crashers</div>
+                        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">For groups that just want to dance, toast &amp; party till sunrise.</h3>
+                        <a href="#contact" style="display: inline-block; background: #c9a96e; color: white; padding: 8px 25px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin-top: 10px; border: none; cursor: pointer;">Get the Party Plan</a>
                     </div>
                 </div>
 
                 <!-- Paquete 3: Relaxation Retreat -->
-                <div class="package-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s; border: 2px solid #c9a96e; min-height: 400px; display: flex; align-items: flex-end; position: relative;">
+                <div class="package-gallery-item" style="position: relative; overflow: hidden; border-radius: 10px; min-height: 400px; cursor: pointer; transition: all 0.3s; border: 2px solid #c9a96e;">
                     <!-- ⬇️⬇️⬇️ IMAGEN 3: RELAXATION RETREAT ⬇️⬇️⬇️ -->
-                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
-                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Relaxation Retreat" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    </div>
-                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.1) 100%); z-index: 1;"></div>
-                    <div style="padding: 30px 25px 25px; position: relative; z-index: 2; color: white; width: 100%;">
-                        <h3 style="color: #ffffff; font-size: 1.6rem; margin-bottom: 5px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">🧘 The Relaxation Retreat</h3>
-                        <div class="package-subtitle" style="color: #ffd700; font-weight: 400; margin-bottom: 15px; font-size: 0.95rem; text-shadow: 0 2px 6px rgba(0,0,0,0.5);">For those who prefer yoga, spa days &amp; calm Caribbean vibes. Perfect for wellness-loving bridesmaids.</div>
-                        <ul style="list-style: none; margin: 10px 0; padding: 0;">
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Private Villa with Pool</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Daily Spa &amp; Massages</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Sunrise Yoga on the Beach</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Private Chef (Healthy Menu)</li>
-                            <li style="padding: 4px 0; color: #ffffff; font-weight: 300; font-size: 0.9rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">✓ Meditation Sessions</li>
-                        </ul>
-                        <a href="#contact" class="btn-small" style="display: inline-block; background: #c9a96e; color: white; padding: 10px 30px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; border: none; cursor: pointer; margin-top: 10px;">Get the Retreat Plan</a>
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Relaxation Retreat" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%); pointer-events: none;"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 25px; color: white; text-align: left;">
+                        <div style="margin-bottom: 5px; font-size: 0.85rem; color: #ffd700; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">🧘 The Relaxation Retreat</div>
+                        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">For those who prefer yoga, spa days &amp; calm Caribbean vibes.</h3>
+                        <a href="#contact" style="display: inline-block; background: #c9a96e; color: white; padding: 8px 25px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin-top: 10px; border: none; cursor: pointer;">Get the Retreat Plan</a>
                     </div>
                 </div>
 

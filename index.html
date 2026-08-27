@@ -9,6 +9,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
             
     <style>
+                /* --- PAQUETES (estilo referencia) --- */
+        .package-item {
+            transition: all 0.4s ease;
+        }
+
+        .package-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(201, 169, 110, 0.25);
+        }
+
+        .package-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .package-item .package-btn {
+            transition: all 0.3s ease;
+        }
+
+        .package-item .package-btn:hover {
+            background: #a8874e;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 992px) {
+            .packages-wrapper {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .packages-wrapper {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+        }
                 /* --- SECCIÓN CTA FORM (Want to talk?) --- */
         .cta-form-section {
             position: relative;

@@ -9,39 +9,133 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
             
     <style>
-                /* --- PAQUETES (estilo referencia) --- */
-        .package-item {
+                        /* --- PAQUETES (estilo referencia WordPress) --- */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .package-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #c9a96e;
             transition: all 0.4s ease;
+            background: #1a1a1a;
         }
 
-        .package-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(201, 169, 110, 0.25);
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(201, 169, 110, 0.2);
         }
 
-        .package-item:hover img {
+        .package-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+            height: 100%;
+        }
+
+        .package-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .package-card:hover .package-image-wrapper img {
             transform: scale(1.08);
         }
 
-        .package-item .package-btn {
-            transition: all 0.3s ease;
+        .package-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.05) 100%);
+            pointer-events: none;
+            transition: opacity 0.4s ease;
         }
 
-        .package-item .package-btn:hover {
+        .package-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 25px 25px;
+            color: white;
+            z-index: 2;
+        }
+
+        .package-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #ffd700;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 8px;
+        }
+
+        .package-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            color: #ffffff;
+        }
+
+        .package-btn {
+            display: inline-block;
+            background: #c9a96e;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.3);
+        }
+
+        .package-btn:hover {
             background: #a8874e;
             transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(201, 169, 110, 0.4);
         }
 
+        /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
-            .packages-wrapper {
-                grid-template-columns: repeat(2, 1fr) !important;
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
             }
         }
 
         @media (max-width: 768px) {
-            .packages-wrapper {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
+            .packages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .package-image-wrapper {
+                min-height: 300px;
+            }
+            .package-image-wrapper img {
+                min-height: 300px;
+            }
+            .package-content h3 {
+                font-size: 1.1rem;
+            }
+            .package-content {
+                padding: 20px;
             }
         }
                 /* --- SECCIÓN CTA FORM (Want to talk?) --- */
@@ -1436,61 +1530,53 @@
         </div>
     </section>
     
-        <!-- FIND YOUR PERFECT PACKAGE -->
+           <!-- FIND YOUR PERFECT PACKAGE -->
     <section class="section" id="packages">
         <div class="container">
             <h2 class="section-title">Find Your Perfect Bachelorette Package</h2>
             <p class="section-subtitle">Choose the vibe that fits your group. We'll send you the full itinerary &amp; budget for free within 24 hours. Every package includes 4 days, 3 nights, and full concierge service.</p>
+            
             <div class="packages-grid">
                 
                 <!-- Paquete 1: Adventure Escape -->
                 <div class="package-card">
-                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80');"></div>
-                    <div class="package-body">
-                        <h3>🌿 The Adventure Escape</h3>
-                        <div class="package-subtitle">For wild souls who want cenotes, ATVs &amp; beach parties. Balance nature, fun &amp; luxury your way.</div>
-                        <ul>
-                            <li>Beachfront Villa</li>
-                            <li>ATV Tour Adventure</li>
-                            <li>Cenote Swimming</li>
-                            <li>Beach Bonfire</li>
-                            <li>Guide Included</li>
-                        </ul>
-                        <a href="#contact" class="btn-small">Get the Adventure Plan</a>
+                    <div class="package-image-wrapper">
+                        <!-- ⬇️⬇️⬇️ CAMBIA ESTA URL POR LA DE TU IMAGEN ⬇️⬇️⬇️ -->
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" alt="Adventure Escape">
+                        <div class="package-overlay"></div>
+                        <div class="package-content">
+                            <div class="package-tag">🌿 The Adventure Escape</div>
+                            <h3>For wild souls who want cenotes, ATVs &amp; beach parties. Balance nature, fun &amp; luxury your way.</h3>
+                            <a href="#contact" class="package-btn">Get the Adventure Plan</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Paquete 2: Party Crashers -->
                 <div class="package-card">
-                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80');"></div>
-                    <div class="package-body">
-                        <h3>🎉 The Party Crashers</h3>
-                        <div class="package-subtitle">For groups that just want to dance, toast &amp; party till sunrise. Beach clubs, décor &amp; VIP reservations handled for you.</div>
-                        <ul>
-                            <li>Central Location Villa</li>
-                            <li>VIP Beach Club Tables</li>
-                            <li>Custom Decor &amp; Props</li>
-                            <li>Pre-party Drinks</li>
-                            <li>Party Coordinator</li>
-                        </ul>
-                        <a href="#contact" class="btn-small">Get the Party Plan</a>
+                    <div class="package-image-wrapper">
+                        <!-- ⬇️⬇️⬇️ CAMBIA ESTA URL POR LA DE TU IMAGEN ⬇️⬇️⬇️ -->
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80" alt="Party Crashers">
+                        <div class="package-overlay"></div>
+                        <div class="package-content">
+                            <div class="package-tag">🎉 The Party Crashers</div>
+                            <h3>For groups that just want to dance, toast &amp; party till sunrise. Beach clubs, décor &amp; VIP reservations handled for you.</h3>
+                            <a href="#contact" class="package-btn">Get the Party Plan</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Paquete 3: Relaxation Retreat -->
                 <div class="package-card">
-                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80');"></div>
-                    <div class="package-body">
-                        <h3>🧘 The Relaxation Retreat</h3>
-                        <div class="package-subtitle">For those who prefer yoga, spa days &amp; calm Caribbean vibes. Perfect for wellness-loving bridesmaids.</div>
-                        <ul>
-                            <li>Private Villa with Pool</li>
-                            <li>Daily Spa &amp; Massages</li>
-                            <li>Sunrise Yoga on the Beach</li>
-                            <li>Private Chef (Healthy Menu)</li>
-                            <li>Meditation Sessions</li>
-                        </ul>
-                        <a href="#contact" class="btn-small">Get the Retreat Plan</a>
+                    <div class="package-image-wrapper">
+                        <!-- ⬇️⬇️⬇️ CAMBIA ESTA URL POR LA DE TU IMAGEN ⬇️⬇️⬇️ -->
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Relaxation Retreat">
+                        <div class="package-overlay"></div>
+                        <div class="package-content">
+                            <div class="package-tag">🧘 The Relaxation Retreat</div>
+                            <h3>For those who prefer yoga, spa days &amp; calm Caribbean vibes. Perfect for wellness-loving bridesmaids.</h3>
+                            <a href="#contact" class="package-btn">Get the Retreat Plan</a>
+                        </div>
                     </div>
                 </div>
 

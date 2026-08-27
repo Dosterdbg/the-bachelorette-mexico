@@ -7,7 +7,131 @@
     
     <!-- Fuente Assistant -->
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
-    
+            /* --- SECCIÓN CTA FORM (Want to talk?) --- */
+        .cta-form-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.55)),
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1400&q=80') center/cover no-repeat;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            background-attachment: fixed;
+        }
+
+        .cta-form-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-form-content h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .cta-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cta-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .cta-form input[type="text"],
+        .cta-form input[type="tel"] {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Assistant', sans-serif;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .cta-form input[type="text"]::placeholder,
+        .cta-form input[type="tel"]::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cta-form input[type="text"]:focus,
+        .cta-form input[type="tel"]:focus {
+            outline: none;
+            border-color: #c9a96e;
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 0 15px rgba(201, 169, 110, 0.2);
+        }
+
+        .cta-form-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        .cta-form-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #c9a96e;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .cta-form-checkbox label a {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+
+        .cta-form-checkbox label a:hover {
+            color: #ffe44d;
+        }
+
+        .btn-cta-form {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a96e, #a8874e);
+            color: white;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .btn-cta-form:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(201, 169, 110, 0.5);
+            background: linear-gradient(135deg, #d4b87a, #b8975a);
+        }
+
+        @media (max-width: 768px) {
+            .cta-form-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .cta-form-content h2 {
+                font-size: 1.8rem;
+            }
+            .btn-cta-form {
+                max-width: 100%;
+            }
+        }
     <style>
         /* --- RESET Y ESTILOS BASE --- */
         * {

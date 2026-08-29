@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
             
     <style>
-                /* --- FAQ (estilo referencia) --- */
+         /* --- FAQ (estilo referencia con animación) --- */
         .faq-list {
             max-width: 800px;
             margin: 0 auto;
@@ -22,11 +22,12 @@
             border: 1px solid #e8e0da;
             overflow: hidden;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .faq-item:hover {
             border-color: #c9a96e;
-            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.08);
+            box-shadow: 0 4px 20px rgba(201, 169, 110, 0.12);
         }
 
         .faq-question {
@@ -40,6 +41,7 @@
             font-size: 1.05rem;
             background: #fcf9f7;
             transition: background 0.3s ease;
+            user-select: none;
         }
 
         .faq-question:hover {
@@ -52,10 +54,12 @@
         }
 
         .faq-icon {
-            font-size: 0.8rem;
-            transition: transform 0.3s ease;
+            font-size: 0.75rem;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             color: #c9a96e;
             flex-shrink: 0;
+            display: inline-block;
+            will-change: transform;
         }
 
         .faq-item.active .faq-icon {
@@ -66,17 +70,26 @@
             background: #f5efe9;
         }
 
+        .faq-item.active {
+            border-color: #c9a96e;
+            box-shadow: 0 4px 20px rgba(201, 169, 110, 0.15);
+        }
+
         .faq-answer {
-            padding: 0 25px 20px;
+            padding: 0 25px;
             color: #555;
             font-weight: 400;
             font-size: 1rem;
             line-height: 1.7;
-            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+            display: block; /* Cambiado de 'none' a 'block' para animación */
         }
 
-        .faq-answer.active {
-            display: block;
+        .faq-item.active .faq-answer {
+            padding: 0 25px 20px;
+            max-height: 500px; /* Suficiente para cualquier respuesta */
         }
 
         @media (max-width: 768px) {
@@ -86,6 +99,9 @@
             }
             .faq-answer {
                 font-size: 0.95rem;
+                padding: 0 18px;
+            }
+            .faq-item.active .faq-answer {
                 padding: 0 18px 18px;
             }
         }
@@ -1922,6 +1938,80 @@
 
     <!-- JAVASCRIPT -->
     <script>
+            <script>
+        // ============================================================
+        // FAQ ACCORDION (con animación suave)
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                
+                question.addEventListener('click', function() {
+                    // Cerrar todas las demás preguntas
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            const otherAnswer = otherItem.querySelector('.faq-answer');
+                            const otherIcon = otherItem.querySelector('.faq-icon');
+                            otherAnswer.style.maxHeight = null;
+                            otherAnswer.style.display = 'none';
+                            if (otherIcon) {
+                                otherIcon.style.transform = 'rotate(0deg)';
+                            }
+                        }
+                    });
+                    
+                    // Alternar la pregunta actual
+                    if (item.classList.contains('active')) {
+                        // Cerrar
+                        item.classList.remove('active');
+                        answer.style.maxHeight = null;
+                        answer.style.display = 'none';
+                        if (icon) {
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    } else {
+                        // Abrir
+                        item.classList.add('active');
+                        answer.style.display = 'block';
+                        // Forzar reflow para que la animación funcione
+                        answer.style.maxHeight = '0';
+                        requestAnimationFrame(() => {
+                            answer.style.maxHeight = answer.scrollHeight + 'px';
+                        });
+                        if (icon) {
+                            icon.style.transform = 'rotate(180deg)';
+                        }
+                    }
+                });
+            });
+        });
+
+        // ============================================================
+        // FORMULARIOS
+        // ============================================================
+        function handleHeroFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! We\'ll send you a custom proposal within 24 hours. 💖');
+            document.getElementById('heroForm').reset();
+        }
+
+        function handleContactFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! We\'ll send you your free itinerary within 24 hours. 💖');
+            document.getElementById('contactForm').reset();
+        }
+
+        function handleCallFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! We\'ll call you shortly. 📞');
+            document.querySelector('.cta-form').reset();
+        }
+    </script>
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {

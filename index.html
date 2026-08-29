@@ -9,6 +9,86 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
             
     <style>
+                /* --- FAQ (estilo referencia) --- */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            border: 1px solid #e8e0da;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #c9a96e;
+            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.08);
+        }
+
+        .faq-question {
+            padding: 18px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: #121212;
+            font-size: 1.05rem;
+            background: #fcf9f7;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f3ef;
+        }
+
+        .faq-question span:first-child {
+            flex: 1;
+            padding-right: 15px;
+        }
+
+        .faq-icon {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: #c9a96e;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-question {
+            background: #f5efe9;
+        }
+
+        .faq-answer {
+            padding: 0 25px 20px;
+            color: #555;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .faq-question {
+                font-size: 0.95rem;
+                padding: 15px 18px;
+            }
+            .faq-answer {
+                font-size: 0.95rem;
+                padding: 0 18px 18px;
+            }
+        }
                 /* --- TESTIMONIALS (estilo Google) --- */
         .testimonial-card {
             transition: all 0.3s ease;
@@ -1731,32 +1811,53 @@
         </div>
     </section>
     <!-- FAQ -->
+       <!-- FAQ -->
     <section class="section" id="faq">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title" style="color: #c9a96e;">Frequently Asked Questions</h2>
+            <p class="section-subtitle" style="margin-bottom: 40px;">Everything you need to know before planning your perfect bachelorette in Tulum.</p>
+            
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question"><span>How far in advance should we book our services?</span><span class="faq-icon">▼</span></div>
+                    <div class="faq-question">
+                        <span>How far in advance should we book our services?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
                     <div class="faq-answer">We recommend booking at least 4–6 weeks in advance to ensure availability, especially during high season.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><span>Can we customize our package or choose à la carte services?</span><span class="faq-icon">▼</span></div>
+                    <div class="faq-question">
+                        <span>Can we customize our package or choose à la carte services?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
                     <div class="faq-answer">Absolutely! All our services are fully customizable to fit your group's vibe, budget, and schedule.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><span>Do you offer airport transportation for large groups?</span><span class="faq-icon">▼</span></div>
+                    <div class="faq-question">
+                        <span>Do you offer airport transportation for large groups?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
                     <div class="faq-answer">Yes, we provide private airport transfers for groups of all sizes — just let us know your arrival details.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><span>Is there a minimum group size to book your services?</span><span class="faq-icon">▼</span></div>
+                    <div class="faq-question">
+                        <span>Is there a minimum group size to book your services?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
                     <div class="faq-answer">Nope! Whether it's an intimate party of 3 or a full crew of 15+, we'll make it special.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><span>What happens if we need to cancel or reschedule?</span><span class="faq-icon">▼</span></div>
+                    <div class="faq-question">
+                        <span>What happens if we need to cancel or reschedule?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
                     <div class="faq-answer">We understand things happen. Just reach out as early as possible and we'll do our best to adjust.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><span>Do your chefs and staff speak English?</span><span class="faq-icon">▼</span></div>
+                    <div class="faq-question">
+                        <span>Do your chefs and staff speak English?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
                     <div class="faq-answer">Yes! Our team is bilingual and experienced in hosting international guests.</div>
                 </div>
             </div>

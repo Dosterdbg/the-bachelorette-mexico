@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
             
     <style>
-        /* --- BOTÓN MORE INFORMATION (estilo outline dorado) --- */
+   /* --- BOTÓN MORE INFORMATION (estilo outline dorado) --- */
 .nav-cta-outline {
     color: #c9a96e !important;
     background: transparent !important;
@@ -20,7 +20,9 @@
     font-size: 0.95rem;
     transition: all 0.3s ease;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .nav-cta-outline:hover {
@@ -28,6 +30,17 @@
     color: #ffffff !important;
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(201, 169, 110, 0.4);
+}
+
+.nav-cta-outline:hover svg {
+    stroke: #ffffff;
+}
+
+.nav-cta-outline svg {
+    stroke: #c9a96e;
+    transition: stroke 0.3s ease;
+    flex-shrink: 0;
+}
 }
          /* --- FAQ (estilo referencia con animación) --- */
         .faq-list {

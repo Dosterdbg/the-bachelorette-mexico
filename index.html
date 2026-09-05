@@ -9,6 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
             
     <style>
+        /* --- BOTÓN MORE INFORMATION (estilo outline dorado) --- */
+.nav-cta-outline {
+    color: #c9a96e !important;
+    background: transparent !important;
+    border: 2px solid #c9a96e;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-cta-outline:hover {
+    background: #c9a96e;
+    color: #ffffff !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(201, 169, 110, 0.4);
+}
          /* --- FAQ (estilo referencia con animación) --- */
         .faq-list {
             max-width: 800px;
@@ -1443,7 +1463,7 @@
                 <a href="#services">Services</a>
                 <a href="#packages">Packages</a>
                 <a href="#faq">FAQ</a>
-                <a href="#contact" class="nav-cta">📲 More Information</a>
+                <a href="#contact" class="nav-cta-outline">📲 More Information</a>
             </nav>
         </div>
     </header>

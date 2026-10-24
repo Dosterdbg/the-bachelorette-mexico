@@ -231,135 +231,179 @@
                 gap: 25px !important;
             }
         }
-                        /* --- PAQUETES (estilo referencia WordPress) --- */
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
+                       /* ============================================================
+   PORTFOLIO GALLERY 3 COLUMNAS (Find Your Perfect Package)
+   ============================================================ */
+.portfolio-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
 
-        .package-card {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid #c9a96e;
-            transition: all 0.4s ease;
-            background: #1a1a1a;
-        }
+.portfolio-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    min-height: 520px;
+    display: flex;
+    align-items: flex-end;
+    border: 2px solid #c9a96e;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: #1a1a1a;
+    cursor: pointer;
+}
 
-        .package-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(201, 169, 110, 0.2);
-        }
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(201, 169, 110, 0.25);
+}
 
-        .package-image-wrapper {
-            position: relative;
-            overflow: hidden;
-            min-height: 380px;
-            height: 100%;
-        }
+/* Imagen de fondo con zoom lento */
+.portfolio-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease;
+    z-index: 0;
+}
 
-        .package-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            min-height: 380px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s ease;
-        }
+.portfolio-card:hover .portfolio-card-bg {
+    transform: scale(1.08);
+}
 
-        .package-card:hover .package-image-wrapper img {
-            transform: scale(1.08);
-        }
+/* Overlay oscuro degradado */
+.portfolio-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.92) 0%,
+        rgba(0, 0, 0, 0.55) 50%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
 
-        .package-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.05) 100%);
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-        }
+.portfolio-card:hover .portfolio-card-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.65) 50%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+}
 
-        .package-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 30px 25px 25px;
-            color: white;
-            z-index: 2;
-        }
+/* Contenido sobre la imagen */
+.portfolio-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 35px 28px 32px;
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-        .package-tag {
-            display: inline-block;
-            font-size: 0.8rem;
-            color: #ffffff;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 8px;
-        }
+/* Subtítulo dorado (nombre del paquete) */
+.portfolio-subtitle {
+    font-size: 0.85rem;
+    color: #c9a96e;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    transition: color 0.3s ease;
+}
 
-        .package-content h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            line-height: 1.4;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-            color: #ffffff;
-        }
+.portfolio-card:hover .portfolio-subtitle {
+    color: #e8c98a;
+}
 
-        .package-btn {
-            display: inline-block;
-            background: #c9a96e;
-            color: white;
-            padding: 10px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.3);
-        }
+/* Título principal del paquete */
+.portfolio-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
 
-        .package-btn:hover {
-            background: #a8874e;
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(201, 169, 110, 0.4);
-        }
+/* Botón que aparece al hover */
+.portfolio-btn {
+    display: inline-block;
+    align-self: flex-start;
+    background: #c9a96e;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(201, 169, 110, 0.35);
+}
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 992px) {
-            .packages-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-            }
-        }
+.portfolio-card:hover .portfolio-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        @media (max-width: 768px) {
-            .packages-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .package-image-wrapper {
-                min-height: 300px;
-            }
-            .package-image-wrapper img {
-                min-height: 300px;
-            }
-            .package-content h3 {
-                font-size: 1.1rem;
-            }
-            .package-content {
-                padding: 20px;
-            }
-        }
+.portfolio-btn:hover {
+    background: #a8874e;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(201, 169, 110, 0.5);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .portfolio-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    .portfolio-card {
+        min-height: 460px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .portfolio-card {
+        min-height: 400px;
+    }
+    .portfolio-card-content {
+        padding: 28px 22px 25px;
+    }
+    .portfolio-title {
+        font-size: 1.15rem;
+    }
+    .portfolio-subtitle {
+        font-size: 0.75rem;
+    }
+    /* En móvil, botón siempre visible (no hay hover táctil) */
+    .portfolio-btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
                 /* --- SECCIÓN CTA FORM (Want to talk?) --- */
         .cta-form-section {
             position: relative;
@@ -1786,55 +1830,49 @@
         </div>
     </section>
     
-           <!-- FIND YOUR PERFECT PACKAGE -->
-    <section class="section" id="packages">
-        <div class="container">
-           <h2 class="section-title" style="color: #121212;">Find Your Perfect Bachelorette Package</h2>
-            <p class="section-subtitle">Choose the vibe that fits your group. We'll send you the full itinerary &amp; budget for free within 24 hours. Every package includes 4 days, 3 nights, and full concierge service.</p>
-            
-            <div class="packages-grid">
-                
-                <!-- Paquete 1: Adventure Escape -->
-                <div class="package-card">
-                    <div class="package-image-wrapper">
-                        <!-- ⬇️⬇️⬇️ CAMBIA ESTA URL POR LA DE TU IMAGEN ⬇️⬇️⬇️ -->
-                        <img src="https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/Tours%20&%20excurtions.jpg?raw=true" alt="Adventure Escape">
-                        <div class="package-overlay"></div>
-                      <div class="package-content">
-    <div class="package-tag"> The Adventure Escape</div>
-    <h3>For wild souls who want cenotes, ATVs &amp; beach parties. Balance nature, fun &amp; luxury your way.</h3>
-    <a href="#contact" class="package-btn">Get the Adventure Plan</a>
-</div>
-                <!-- Paquete 2: Party Crashers -->
-                <div class="package-card">
-                    <div class="package-image-wrapper">
-                        <!-- ⬇️⬇️⬇️ CAMBIA ESTA URL POR LA DE TU IMAGEN ⬇️⬇️⬇️ -->
-                        <img src="https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/tequila&mezcal.JPG?raw=true" alt="Party Crashers">
-                        <div class="package-overlay"></div>
-                        <div class="package-content">
-                            <div class="package-tag"> The Party Crashers</div>
-                            <h3>For groups that just want to dance, toast &amp; party till sunrise. Beach clubs, décor &amp; VIP reservations handled for you.</h3>
-                            <a href="#contact" class="package-btn">Get the Party Plan</a>
-                        </div>
-                    </div>
-                </div>
+          <!-- FIND YOUR PERFECT PACKAGE (3 columnas estilo portfolio) -->
+<section class="section" id="packages">
+    <div class="container">
+        <h2 class="section-title" style="color: #121212;">Find Your Perfect Bachelorette Package</h2>
+        <p class="section-subtitle">Choose the vibe that fits your group. We'll send you the full itinerary &amp; budget for free within 24 hours. Every package includes 4 days, 3 nights, and full concierge service.</p>
 
-                <!-- Paquete 3: Relaxation Retreat -->
-                <div class="package-card">
-                    <div class="package-image-wrapper">
-                        <!-- ⬇️⬇️⬇️ CAMBIA ESTA URL POR LA DE TU IMAGEN ⬇️⬇️⬇️ -->
-                        <img src="https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/relaxation%20retreat.JPG?raw=true" alt="Relaxation Retreat">
-                        <div class="package-overlay"></div>
-                        <div class="package-content">
-                            <div class="package-tag"> The Relaxation Retreat</div>
-                            <h3>For those who prefer yoga, spa days &amp; calm Caribbean vibes. Perfect for wellness-loving bridesmaids.</h3>
-                            <a href="#contact" class="package-btn">Get the Retreat Plan</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="portfolio-grid-3">
 
+            <!-- Paquete 1: Adventure Escape -->
+            <div class="portfolio-card">
+                <div class="portfolio-card-bg" style="background-image: url('https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/Tours%20&%20excurtions.jpg?raw=true');"></div>
+                <div class="portfolio-card-overlay"></div>
+                <div class="portfolio-card-content">
+                    <p class="portfolio-subtitle">The Adventure Escape</p>
+                    <h3 class="portfolio-title">For wild souls who want cenotes, ATVs &amp; beach parties. Balance nature, fun &amp; luxury your way.</h3>
+                    <a href="#contact" class="portfolio-btn">Get the Adventure Plan</a>
+                </div>
             </div>
+
+            <!-- Paquete 2: Party Crashers -->
+            <div class="portfolio-card">
+                <div class="portfolio-card-bg" style="background-image: url('https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/tequila&mezcal.JPG?raw=true');"></div>
+                <div class="portfolio-card-overlay"></div>
+                <div class="portfolio-card-content">
+                    <p class="portfolio-subtitle">The Party Crashers</p>
+                    <h3 class="portfolio-title">For groups that just want to dance, toast &amp; party till sunrise. Beach clubs, décor &amp; VIP reservations handled for you.</h3>
+                    <a href="#contact" class="portfolio-btn">Get the Party Plan</a>
+                </div>
+            </div>
+
+            <!-- Paquete 3: Relaxation Retreat -->
+            <div class="portfolio-card">
+                <div class="portfolio-card-bg" style="background-image: url('https://github.com/Dosterdbg/the-bachelorette-mexico/blob/main/relaxation%20retreat.JPG?raw=true');"></div>
+                <div class="portfolio-card-overlay"></div>
+                <div class="portfolio-card-content">
+                    <p class="portfolio-subtitle">The Relaxation Retreat</p>
+                    <h3 class="portfolio-title">For those who prefer yoga, spa days &amp; calm Caribbean vibes. Perfect for wellness-loving bridesmaids.</h3>
+                    <a href="#contact" class="portfolio-btn">Get the Retreat Plan</a>
+                </div>
+            </div>
+
         </div>
+    </div>
     </section>
         <!-- WHAT'S INSIDE YOUR FREE BACHELORETTE GUIDE -->
     <section class="section" id="guide">
